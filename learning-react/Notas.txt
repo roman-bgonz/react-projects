@@ -1,0 +1,8 @@
+- Librería de JS más polulares actualmente
+- Desarrollada por FB
+- Sirve para desarrollar interfaces de usuario web o clientes web dinámicas reactivas y asíncronas con el server
+- Utiliza JSX, trabajar sin usar JSX es muy dificil
+
+
+1.- Instalar NODE Y NPM
+2.- npx create-react-app nombre-app (https://create-react-app.dev/docs/getting-started)
