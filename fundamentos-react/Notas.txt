@@ -1,0 +1,5 @@
+React JS - https://www.udemy.com/course/fundamentos-de-reactjs-desde-la-documentacion-oficial/learn/lecture/24137022#overview
+- Librería para crear interfaces de usuario basada en componentes
+- Su principal uso es para crear aplicaciones que se estén actualizando en tiempo real
+- Componentes:  Pequeñas partes/fracciones de código que pueden ser reutilizables
+- 
