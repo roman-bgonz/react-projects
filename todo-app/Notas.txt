@@ -1,0 +1,16 @@
+https://www.udemy.com/course/full-stack-application-with-spring-boot-and-react/
+
+* package.json is like pom.xml file for maven dependencies
+* npx create-react-app nombre-proyecto
+* components: reusable pieces of code
+* The root component is tipically called AppComponent
+* JSX: Javascript extension, in a js file we are writing somethong which looks like HTML code
+* Each component is formed by view (jsx or javascript), logic (javascript), styling (css), state (internal data store) and props (pass data)
+* JSX is converted to JS with BABEL which comes bundled in the React App
+* As a programmer it is so difficult to write compatible code for all browsers, so we code in the latest JS version and use BABEL to compile the code to be compatible with browsers
+* We CANNOT return 2 elements from a single JSX, if we want to do this, first we need to enclose the two elements inside a single one like a DIV
+* In JSX all tags need to be closed
+* By convention, all function components should be named with starting capital letter, if we start with lowerCamelCase, and we call this function from our main, this is not going to be showed
+* Each componets must be defined in its own file
+* In JS each file is called a module
+* Only DEFAULT EXPORT could be used like import SOMETHING from ""; if a single module exports more than one component, so the next component should be imported in curly braces import FIRST, {SECOND} from "";
