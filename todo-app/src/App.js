@@ -4,12 +4,15 @@ import FirstComponent, {
 } from "./components/learning-examples/FirsComponent";
 import ThirdComponent from "./components/learning-examples/ThirdComponent";
 import Counter from "./components/counter/Counter";
+import TodoApp from './components/todo/TodoApp';
+import './bootstrap.css'
 
 function App() {
   return (
     <div className="App">
       {/* <LearningComponents></LearningComponents> */}
-      <Counter></Counter>
+      {/* <Counter></Counter> */}
+      <TodoApp></TodoApp>
     </div>
   );
 }

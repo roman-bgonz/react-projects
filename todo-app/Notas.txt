@@ -1,5 +1,7 @@
 https://www.udemy.com/course/full-stack-application-with-spring-boot-and-react/
 
+BACKEND https://github.com/romam7/spring-projects
+
 * package.json is like pom.xml file for maven dependencies
 * npx create-react-app nombre-proyecto
 * components: reusable pieces of code
@@ -7,10 +9,26 @@ https://www.udemy.com/course/full-stack-application-with-spring-boot-and-react/
 * JSX: Javascript extension, in a js file we are writing somethong which looks like HTML code
 * Each component is formed by view (jsx or javascript), logic (javascript), styling (css), state (internal data store) and props (pass data)
 * JSX is converted to JS with BABEL which comes bundled in the React App
-* As a programmer it is so difficult to write compatible code for all browsers, so we code in the latest JS version and use BABEL to compile the code to be compatible with browsers
+* As a programmer it is so difficult to write compatible code for all browsers, so we code in the latest JS version and use BABEL to compile the
+    code to be compatible with browsers
 * We CANNOT return 2 elements from a single JSX, if we want to do this, first we need to enclose the two elements inside a single one like a DIV
 * In JSX all tags need to be closed
-* By convention, all function components should be named with starting capital letter, if we start with lowerCamelCase, and we call this function from our main, this is not going to be showed
+* By convention, all function components should be named with starting capital letter, if we start with lowerCamelCase,
+    and we call this function from our main, this is not going to be showed
 * Each componets must be defined in its own file
 * In JS each file is called a module
-* Only DEFAULT EXPORT could be used like import SOMETHING from ""; if a single module exports more than one component, so the next component should be imported in curly braces import FIRST, {SECOND} from "";
+* Only DEFAULT EXPORT could be used like import SOMETHING from ""; if a single module exports more than one component, so the next component
+    should be imported in curly braces import FIRST, {SECOND} from "";
+* When we define a method we just pass the reference to the method
+* To work with routing we have to type the next: npm add react-router-dom
+* Web service: Service delivered over the web
+	- application to application interaction
+	- should be interoperable - not platform dependent
+	- should allow communication over a network
+* Restful web service: try to define services using the different concepts that are alredy present in HTTP
+    - Consumer first: Have a clear idea of what consumer want and who they are (web, mobile)
+    - Correct documentacion
+    - Make best use of HTTP
+    - Always use plurals
+* Promise: Eventual completion (or failure) of an asynchronous operation, it helps us to do something asynchronously and define what should be
+    done when it is successful or when it fails
