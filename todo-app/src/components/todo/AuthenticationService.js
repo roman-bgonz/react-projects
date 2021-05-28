@@ -1,6 +1,19 @@
+import axios from "axios";
+
 class AuthenticationService {
+  executeBasicAuthService(username, password) {
+    return axios.get(`http://localhost:8080/basicauth`, {
+      headers: { authorization: this.createBasicAuthToken(username, password) },
+    });
+  }
+
+  createBasicAuthToken(username, password) {
+    return "Basic " + window.btoa(username + ":" + password);
+  }
+
   registerSuccessfulLogin(username, password) {
     sessionStorage.setItem("authenticatedUser", username);
+    this.setupAxiosInterceptor(this.createBasicAuthToken(username, password));
   }
 
   logout() {
@@ -8,7 +21,7 @@ class AuthenticationService {
   }
 
   isUserLoggedIn() {
-    let user = sessionStorage.getItem("authenticatedUser")
+    let user = sessionStorage.getItem("authenticatedUser");
     if (user === null) return false;
 
     return true;
@@ -19,7 +32,16 @@ class AuthenticationService {
       return sessionStorage.getItem("authenticatedUser");
     }
 
-    return '';
+    return "";
+  }
+
+  setupAxiosInterceptor(basicAuth) {
+    axios.interceptors.request.use((config) => {
+      if (this.isUserLoggedIn()) {
+        config.headers.authorization = basicAuth;
+      }
+      return config;
+    });
   }
 }
 

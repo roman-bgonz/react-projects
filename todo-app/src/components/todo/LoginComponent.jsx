@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import AuthenticationService from './AuthenticationService.js'
 
 class LoginComponent extends Component {
@@ -49,20 +49,17 @@ class LoginComponent extends Component {
      * Login method
      */
     loginClicked() {
-
-        if (this.state.username === "roman" && this.state.password === "dummy") {
-            AuthenticationService.registerSuccessfulLogin(this.state.username, this.state.password);
-            this.props.history.push(`/welcome/${this.state.username}`);
-            // this.setState({
-            //     showSuccessMsg: true,
-            //     hasLoginFailed: false
-            // })
-        } else {
+        AuthenticationService.executeBasicAuthService(this.state.username, this.state.password).then(
+            () => {
+                AuthenticationService.registerSuccessfulLogin(this.state.username, this.state.password);
+                this.props.history.push(`/welcome/${this.state.username}`);
+            }
+        ).catch(() => {
             this.setState({
                 hasLoginFailed: true,
                 showSuccessMsg: false
             })
-        }
+        })
     }
 
     render() {
@@ -76,7 +73,7 @@ class LoginComponent extends Component {
                     {this.state.showSuccessMsg && <div>Login successful</div>}
                     User name: <input type="text" name="username" value={this.state.username} onChange={this.handleChange} />
                     Password: <input type="password" name="password" value={this.state.pasword} onChange={this.handleChange}></input>
-                    <button className="btn btn-success" onClick={this.loginClicked}>Login</button>
+                    <button className="btn btn-success ml-2" onClick={this.loginClicked}>Login</button>
                 </div>
 
             </div>
