@@ -1,5 +1,10 @@
 import axios from "axios";
-import { API_URL, USER_NAME_SESSION_ATTRIBUTE } from "../../Constants";
+import {
+  API_URL,
+  JPA_API_URL,
+  USER_NAME_SESSION_ATTRIBUTE,
+} from "../../Constants";
+
 class AuthenticationService {
   executeBasicAuthService(username, password) {
     return axios.get(`${API_URL}/basicauth`, {

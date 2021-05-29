@@ -33,4 +33,4 @@ BACKEND https://github.com/romam7/spring-projects
 * Promise: Eventual completion (or failure) of an asynchronous operation, it helps us to do something asynchronously and define what should be
     done when it is successful or when it fails
 * Spring security enables bot basic and form base authentication (a session which is created in the server and a cookie created in the client)
-* JWT: 
+* Go to http://localhost:8080/h2-console to see database created
