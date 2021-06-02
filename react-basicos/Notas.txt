@@ -5,3 +5,8 @@ https://www.youtube.com/playlist?list=PLvq-jIkSeTUZ5XcUw8fJPTBKEHEKPMTKk
 	- Un componente de clase debe tener su componente de render, que es el que le va a permitir renderizar el código
 * Props: valores que recibe un componente hijo de su componente padre y se agrupan en un objeto llamado props, para pasar este objeto es como agregarle un atributo al componente
 	- Son inmutables, son valores de solo lectura, no las puedes modificar
+* State: Conjunto de variables que va a tener la aplicación o componentes, variables que intervienen en la modificación de X componente
+	- Es inmutable
+	- Es asíncrono
+	- No es accesible desde otro componente excepto de aquel que lo posee y lo asigna
+	- Los function component no pueden tener estado, hasta la versión 17 se permitió esto

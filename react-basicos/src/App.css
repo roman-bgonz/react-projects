@@ -3,7 +3,7 @@
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 20vmin;
   pointer-events: none;
 }
 
@@ -35,4 +35,21 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.hr-text {
+  outline: 0;
+  border: 0;
+  text-align: center;
+  background-color: #9bb1b8;
+  width: 100%;
+}
+.hr-text:before {
+  content: "";
+  position: absolute;
+}
+.hr-text:after {
+  content: attr(data-content);
+  color: rgba(0, 0, 0, 0.815);
+  font-weight: bold;
 }
