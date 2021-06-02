@@ -1,0 +1,7 @@
+https://www.youtube.com/playlist?list=PLvq-jIkSeTUZ5XcUw8fJPTBKEHEKPMTKk
+
+* JSX: Sintaxis javascript que nos va a producir elements de react, no es HTML
+* Component: Interfaz de usuario, pueden o no tener estado
+	- Un componente de clase debe tener su componente de render, que es el que le va a permitir renderizar el código
+* Props: valores que recibe un componente hijo de su componente padre y se agrupan en un objeto llamado props, para pasar este objeto es como agregarle un atributo al componente
+	- Son inmutables, son valores de solo lectura, no las puedes modificar
