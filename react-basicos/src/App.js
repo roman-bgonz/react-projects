@@ -6,7 +6,7 @@ import Propiedades from "./components/Propiedades";
 import Estado from "./components/Estado";
 import RenderizadoCondicional from "./components/RenderizadoCondicional";
 import RenderizadoElementos from "./components/RenderizadoElementos";
-import Eventos from "./components/Eventos";
+import { EventosES6, EventosES7 } from "./components/Eventos";
 
 function App() {
   return (
@@ -41,7 +41,8 @@ function App() {
         <RenderizadoElementos />
 
         <hr className="hr-text" data-content="Eventos" />
-        <Eventos />
+        <EventosES6 />
+        <EventosES7 />
       </header>
     </div>
   );

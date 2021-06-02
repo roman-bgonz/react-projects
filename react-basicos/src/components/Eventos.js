@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-export default class Eventos extends Component {
+export class EventosES6 extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -26,7 +26,38 @@ export default class Eventos extends Component {
   render() {
     return (
       <div>
-        <h3>Eventos en components de clase</h3>
+        <h3>Eventos en components de clase ES6</h3>
+        <h3>{this.state.contador}</h3>
+        <nav>
+          <button onClick={this.sumar}>+</button>
+          <button onClick={this.restar}>-</button>
+        </nav>
+      </div>
+    );
+  }
+}
+
+export class EventosES7 extends Component {
+  state = {
+    contador: 0,
+  };
+
+  sumar = (e) => {
+    this.setState({
+      contador: this.state.contador + 1,
+    });
+  };
+
+  restar = (e) => {
+    this.setState({
+      contador: this.state.contador - 1,
+    });
+  };
+
+  render() {
+    return (
+      <div>
+        <h3>Eventos en components de clas ES7</h3>
         <h3>{this.state.contador}</h3>
         <nav>
           <button onClick={this.sumar}>+</button>
