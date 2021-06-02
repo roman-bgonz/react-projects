@@ -10,3 +10,5 @@ https://www.youtube.com/playlist?list=PLvq-jIkSeTUZ5XcUw8fJPTBKEHEKPMTKk
 	- Es asíncrono
 	- No es accesible desde otro componente excepto de aquel que lo posee y lo asigna
 	- Los function component no pueden tener estado, hasta la versión 17 se permitió esto
+* Renderizado condicional de componentes: Cuando un valor de nuestro estado cambia y esto obliga a nuestro componente a re-pintar la interfaz
+* Renderizado de elementos: 

@@ -4,6 +4,8 @@ import "./App.css";
 import Componente from "./components/Componente";
 import Propiedades from "./components/Propiedades";
 import Estado from "./components/Estado";
+import RenderizadoCondicional from "./components/RenderizadoCondicional";
+import RenderizadoElementos from "./components/RenderizadoElementos";
 
 function App() {
   return (
@@ -11,10 +13,10 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
 
-        <hr class="hr-text" data-content="Componente" />
+        <hr className="hr-text" data-content="Componente" />
         <Componente msg="Hola soy un componente desde las props" />
 
-        <hr class="hr-text" data-content="Propiedades" />
+        <hr className="hr-text" data-content="Propiedades" />
         <Propiedades
           cadena="Es una cadena de texto"
           numero={19}
@@ -28,8 +30,14 @@ function App() {
           }
         />
 
-        <hr class="hr-text" data-content="Estado" />
+        <hr className="hr-text" data-content="Estado" />
         <Estado />
+
+        <hr className="hr-text" data-content="Renderizado condicional" />
+        <RenderizadoCondicional />
+
+        <hr className="hr-text" data-content="Renderizado elementos" />
+        <RenderizadoElementos />
       </header>
     </div>
   );
