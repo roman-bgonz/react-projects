@@ -17,3 +17,13 @@ https://www.youtube.com/playlist?list=PLvq-jIkSeTUZ5XcUw8fJPTBKEHEKPMTKk
 * React es one way databinding - flujo unidireccional
 	- Si deseamos una comunicación bidireccional, puede ser con eventos
 * Un componente se va a renderizar cuando le pasan propiedades o cuando se ve alterado su estado
+* Ciclo de vida: Método especiales de react que se ejecutan de manera automática en un componente de clase, los cuales son montaje, actualizacion y desmontaje
+	- Montaje:
+		* constructor, se ejecuta al crear la instancia de un componente, se puede inicializar el estado y enlazar manejadores de eventos
+		* render, único método requeridom cuando se ejecuta examina el estado y las propiedades y dibuja en componente en el arbol del dom
+		* componentDidMount, se invoca inmendiatamente después de que un componente se ha insertado en el dom, peticiones, conexiones, etc
+	- Actualización:
+		* render, repinta el componente de acuerdo a la afectación del estado
+		* componentDidUpdate, se ejecuta inmendiatamente después de que la actualizacion del estado o las propiedades sucede, ideal para hacer peticones externas
+	- Desmontaje:
+		- componentDidUnmount: Se ejecuta antes de destruir el componente del arbol del dom, método útil para hacer tareas de limpieza

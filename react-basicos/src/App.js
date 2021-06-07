@@ -8,6 +8,7 @@ import RenderizadoCondicional from "./components/RenderizadoCondicional";
 import RenderizadoElementos from "./components/RenderizadoElementos";
 import { EventosES6, EventosES7, MasEventos } from "./components/Eventos";
 import Padre from "./components/ComunicacionComponentes";
+import CicloVida from "./components/CicloVida";
 
 function App() {
   return (
@@ -48,6 +49,9 @@ function App() {
 
         <hr className="hr-text" data-content="Comunicacion entre componentes" />
         <Padre />
+
+        <hr className="hr-text" data-content="Ciclo de vida" />
+        <CicloVida />
       </header>
     </div>
   );
