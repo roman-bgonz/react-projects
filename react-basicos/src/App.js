@@ -11,6 +11,7 @@ import Padre from "./components/ComunicacionComponentes";
 import CicloVida from "./components/CicloVida";
 import AjaxApis from "./components/AjaxApis";
 import ContadorHooks from "./components/hooks/ContadorHooks";
+import ScrollHooks from "./components/hooks/ScrollHooks";
 
 function App() {
   return (
@@ -60,6 +61,9 @@ function App() {
 
         <hr className="hr-text" data-content="Contador hooks" />
         <ContadorHooks titulo="Contador de seguidores" />
+
+        <hr className="hr-text" data-content="Use efftect" />
+        <ScrollHooks />
       </header>
     </div>
   );
