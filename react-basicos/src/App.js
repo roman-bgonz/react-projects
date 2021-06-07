@@ -10,6 +10,7 @@ import { EventosES6, EventosES7, MasEventos } from "./components/Eventos";
 import Padre from "./components/ComunicacionComponentes";
 import CicloVida from "./components/CicloVida";
 import AjaxApis from "./components/AjaxApis";
+import ContadorHooks from "./components/hooks/ContadorHooks";
 
 function App() {
   return (
@@ -56,6 +57,9 @@ function App() {
 
         <hr className="hr-text" data-content="Peticiones asíncronas" />
         <AjaxApis />
+
+        <hr className="hr-text" data-content="Contador hooks" />
+        <ContadorHooks titulo="Contador de seguidores" />
       </header>
     </div>
   );

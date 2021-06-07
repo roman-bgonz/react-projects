@@ -27,3 +27,5 @@ https://www.youtube.com/playlist?list=PLvq-jIkSeTUZ5XcUw8fJPTBKEHEKPMTKk
 		* componentDidUpdate, se ejecuta inmendiatamente después de que la actualizacion del estado o las propiedades sucede, ideal para hacer peticones externas
 	- Desmontaje:
 		- componentDidUnmount: Se ejecuta antes de destruir el componente del arbol del dom, método útil para hacer tareas de limpieza
+* Hooks: Disponible en react a partir de la versión 16.8, nos permite enganchar a través de funciones el concepto del estado y del ciclo de vida
+	- Por cada variable de estado se recomienta tener un useState (const [variable, setVariable] = useState(valor inicial))
