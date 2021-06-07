@@ -13,3 +13,4 @@ https://www.youtube.com/playlist?list=PLvq-jIkSeTUZ5XcUw8fJPTBKEHEKPMTKk
 * Renderizado condicional de componentes: Cuando un valor de nuestro estado cambia y esto obliga a nuestro componente a re-pintar la interfaz
 * Renderizado de elementos: Al llamar a una funcion, es sin parentesis, ya que significa invocación inmediata
 * Lass arrow function heredan el this del contexto en el que se encuentran
+* Cuando una función recibe más de un parametro entonces se tiene que llamar como arrow function
