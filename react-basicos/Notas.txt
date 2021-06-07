@@ -14,3 +14,6 @@ https://www.youtube.com/playlist?list=PLvq-jIkSeTUZ5XcUw8fJPTBKEHEKPMTKk
 * Renderizado de elementos: Al llamar a una funcion, es sin parentesis, ya que significa invocación inmediata
 * Lass arrow function heredan el this del contexto en el que se encuentran
 * Cuando una función recibe más de un parametro entonces se tiene que llamar como arrow function
+* React es one way databinding - flujo unidireccional
+	- Si deseamos una comunicación bidireccional, puede ser con eventos
+* Un componente se va a renderizar cuando le pasan propiedades o cuando se ve alterado su estado
