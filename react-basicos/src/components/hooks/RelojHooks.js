@@ -15,7 +15,7 @@ export default function RelojHooks() {
       clearInterval(temporizador);
     }
     return () => {
-      console.log("Fase de desmontaje");
+      //console.log("Fase de desmontaje");
       clearInterval(temporizador);
     };
   }, [visible]); // Solo se ejecuta cuando hay un cambio en la variable de visible

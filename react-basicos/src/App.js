@@ -13,6 +13,7 @@ import AjaxApis from "./components/AjaxApis";
 import ContadorHooks from "./components/hooks/ContadorHooks";
 import ScrollHooks from "./components/hooks/ScrollHooks";
 import RelojHooks from "./components/hooks/RelojHooks";
+import AjaxHooks from "./components/hooks/AjaxHooks";
 
 function App() {
   return (
@@ -68,6 +69,9 @@ function App() {
 
         <hr className="hr-text" data-content="Reloj" />
         <RelojHooks />
+
+        <hr className="hr-text" data-content="Ajax" />
+        <AjaxHooks />
       </header>
     </div>
   );
