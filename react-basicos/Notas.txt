@@ -30,3 +30,4 @@ https://www.youtube.com/playlist?list=PLvq-jIkSeTUZ5XcUw8fJPTBKEHEKPMTKk
 * Hooks: Disponible en react a partir de la versión 16.8, nos permite enganchar a través de funciones el concepto del estado y del ciclo de vida
 	- Por cada variable de estado se recomienta tener un useState (const [variable, setVariable] = useState(valor inicial))
 	- Se pueden tener tanto useEffect como se nececiten
+	- Un useEffect que no tiene definido el segundo parámetro que es el arreglo de dependencias va a ser un componentDidUpdate
