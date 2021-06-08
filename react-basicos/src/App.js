@@ -14,6 +14,7 @@ import ContadorHooks from "./components/hooks/ContadorHooks";
 import ScrollHooks from "./components/hooks/ScrollHooks";
 import RelojHooks from "./components/hooks/RelojHooks";
 import AjaxHooks from "./components/hooks/AjaxHooks";
+import HooksPersonalizados from "./components/hooks/HooksPersonalizados";
 
 function App() {
   return (
@@ -72,6 +73,9 @@ function App() {
 
         <hr className="hr-text" data-content="Ajax" />
         <AjaxHooks />
+
+        <hr className="hr-text" data-content="Hooks Personalizados" />
+        <HooksPersonalizados />
       </header>
     </div>
   );
