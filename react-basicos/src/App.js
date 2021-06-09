@@ -17,6 +17,7 @@ import AjaxHooks from './components/hooks/AjaxHooks';
 import HooksPersonalizados from './components/hooks/HooksPersonalizados';
 import Referencias from './components/hooks/Referencias';
 import Formularios from './components/Formularios';
+import Estilos from './components/Estilos';
 
 function App() {
   return (
@@ -84,10 +85,9 @@ function App() {
 
         <hr className="hr-text" data-content="Formularios" />
         <Formularios />
-        <br />
-        <br />
-        <br />
-        <br />
+
+        <hr className="hr-text" data-content="Estilos" />
+        <Estilos />
       </header>
     </div>
   );
