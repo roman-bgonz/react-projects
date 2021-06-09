@@ -1,21 +1,22 @@
-import React from "react";
-import logo from "./logo.svg";
-import "./App.css";
-import Componente from "./components/Componente";
-import Propiedades from "./components/Propiedades";
-import Estado from "./components/Estado";
-import RenderizadoCondicional from "./components/RenderizadoCondicional";
-import RenderizadoElementos from "./components/RenderizadoElementos";
-import { EventosES6, EventosES7, MasEventos } from "./components/Eventos";
-import Padre from "./components/ComunicacionComponentes";
-import CicloVida from "./components/CicloVida";
-import AjaxApis from "./components/AjaxApis";
-import ContadorHooks from "./components/hooks/ContadorHooks";
-import ScrollHooks from "./components/hooks/ScrollHooks";
-import RelojHooks from "./components/hooks/RelojHooks";
-import AjaxHooks from "./components/hooks/AjaxHooks";
-import HooksPersonalizados from "./components/hooks/HooksPersonalizados";
-import Referencias from "./components/hooks/Referencias";
+import React from 'react';
+import logo from './logo.svg';
+import './App.css';
+import Componente from './components/Componente';
+import Propiedades from './components/Propiedades';
+import Estado from './components/Estado';
+import RenderizadoCondicional from './components/RenderizadoCondicional';
+import RenderizadoElementos from './components/RenderizadoElementos';
+import { EventosES6, EventosES7, MasEventos } from './components/Eventos';
+import Padre from './components/ComunicacionComponentes';
+import CicloVida from './components/CicloVida';
+import AjaxApis from './components/AjaxApis';
+import ContadorHooks from './components/hooks/ContadorHooks';
+import ScrollHooks from './components/hooks/ScrollHooks';
+import RelojHooks from './components/hooks/RelojHooks';
+import AjaxHooks from './components/hooks/AjaxHooks';
+import HooksPersonalizados from './components/hooks/HooksPersonalizados';
+import Referencias from './components/hooks/Referencias';
+import Formularios from './components/Formularios';
 
 function App() {
   return (
@@ -32,7 +33,7 @@ function App() {
           numero={19}
           booleano={true}
           arreglo={[1, 2, 3]}
-          objeto={{ nombre: "Ro", correo: "rba@gmail.com" }}
+          objeto={{ nombre: 'Ro', correo: 'rba@gmail.com' }}
           funcion={(num) => num * num}
           elementoReact={<i>Esto es un elemento react</i>}
           componenteReact={
@@ -80,6 +81,13 @@ function App() {
 
         <hr className="hr-text" data-content="Referencias" />
         <Referencias />
+
+        <hr className="hr-text" data-content="Formularios" />
+        <Formularios />
+        <br />
+        <br />
+        <br />
+        <br />
       </header>
     </div>
   );
