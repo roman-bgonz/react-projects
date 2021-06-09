@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
-import { useFetch } from "../hooks-personalizados/useFetch";
+import React from 'react';
+import { useFetch } from '../hooks-personalizados/useFetch';
 
 export default function HooksPersonalizados() {
-  let url = "http://jsonplaceholder.typicode.com/users";
+  let url = 'http://jsonplaceholder.typicode.com/users';
 
   let { data, isPending, error } = useFetch(url);
   return (
@@ -12,7 +12,7 @@ export default function HooksPersonalizados() {
         <mark>{JSON.stringify(error)}</mark>
       </h3>
       <h3>
-        <pre style={{ whiteSpace: "pre-wrap" }}>
+        <pre style={{ whiteSpace: 'pre-wrap' }}>
           <code>{JSON.stringify(data)}</code>
         </pre>
       </h3>

@@ -31,3 +31,6 @@ https://www.youtube.com/playlist?list=PLvq-jIkSeTUZ5XcUw8fJPTBKEHEKPMTKk
 	- Por cada variable de estado se recomienta tener un useState (const [variable, setVariable] = useState(valor inicial))
 	- Se pueden tener tanto useEffect como se nececiten
 	- Un useEffect que no tiene definido el segundo parámetro que es el arreglo de dependencias va a ser un componentDidUpdate
+* Referencias: Manera en la que react nos permite controlar un elemento que ya ha sido cargado en el dom
+	- Antes de los hooks, así como no podiamos usar variables de estado en componentes funcionales, no podiamos usar componentes ref en componentes de funcion
+	- Si tenemos un classComponente, utilizamos createRef, si tenemos functionComponent usamos useRef
