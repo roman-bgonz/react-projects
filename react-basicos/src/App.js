@@ -18,6 +18,7 @@ import HooksPersonalizados from './components/hooks/HooksPersonalizados';
 import Referencias from './components/hooks/Referencias';
 import Formularios from './components/Formularios';
 import Estilos from './components/Estilos';
+import ComponentesEstilizados from './components/ComponentesEstilizados';
 
 function App() {
   return (
@@ -88,6 +89,9 @@ function App() {
 
         <hr className="hr-text" data-content="Estilos" />
         <Estilos />
+
+        <hr className="hr-text" data-content="Componentes estilizados" />
+        <ComponentesEstilizados />
       </header>
     </div>
   );
