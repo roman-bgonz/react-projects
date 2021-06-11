@@ -5,12 +5,37 @@ const initialForm = {
   constellation: '',
   id: null,
 };
-const CrudForm = () => {
+const CrudForm = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
   const [form, setForm] = useState(initialForm);
 
-  const handleChange = (e) => {};
-  const handleSubmit = (e) => {};
-  const handleReset = (e) => {};
+  const handleChange = (e) => {
+    setForm({
+      ...form,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!form.name || !form.constellation) {
+      alert('Datos incompletos');
+      return;
+    }
+
+    if (form.id === null) {
+      createData(form);
+    } else {
+      updateData(form);
+    }
+
+    handleReset();
+  };
+
+  const handleReset = (e) => {
+    //Se limpia el formulario
+    setForm(initialForm);
+    setDataToEdit(null);
+  };
 
   return (
     <div>
@@ -30,7 +55,7 @@ const CrudForm = () => {
           onChange={handleChange}
           value={form.constellation}
         />
-        <input type="submt" value="Enviar" />
+        <input type="submit" value="Enviar" />
         <input type="reset" value="Limpiar" onClick={handleReset} />
       </form>
     </div>

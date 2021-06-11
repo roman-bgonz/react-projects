@@ -33,11 +33,33 @@ const initialDb = [
 const CrudApp = () => {
   const [db, setDb] = useState(initialDb);
 
+  // Variable de estado
+  const [dataToEdit, setDataToEdit] = useState(null);
+
+  const createData = (data) => {
+    data.id = Date.now();
+    //Se combina lo que ya está en el arreglo con lo nuevo
+    setDb([...db, data]);
+  };
+
+  const updateData = (data) => {};
+
+  const deleteData = (id) => {};
+
   return (
     <div>
       CRUD App
-      <CrudForm />
-      <CrudTable data={db} />
+      <CrudForm
+        createData={createData}
+        updateData={updateData}
+        dataToEdit={dataToEdit}
+        setDataToEdit={setDataToEdit}
+      />
+      <CrudTable
+        data={db}
+        setDataToEdit={setDataToEdit}
+        deleteData={deleteData}
+      />
     </div>
   );
 };
