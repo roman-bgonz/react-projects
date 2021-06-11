@@ -2,36 +2,8 @@ import React, { useState } from 'react';
 import CrudForm from '../shared/CrudForm';
 import CrudTable from '../shared/CrudTable';
 
-const initialDb = [
-  {
-    id: 1,
-    name: 'Seiya',
-    constellation: 'Pegaso',
-  },
-  {
-    id: 2,
-    name: 'Shiryu',
-    constellation: 'Dragón',
-  },
-  {
-    id: 3,
-    name: 'Hyoga',
-    constellation: 'Cisne',
-  },
-  {
-    id: 4,
-    name: 'Shun',
-    constellation: 'Andrómeda',
-  },
-  {
-    id: 5,
-    name: 'Ikki',
-    constellation: 'Fénix',
-  },
-];
-
-const CrudApp = () => {
-  const [db, setDb] = useState(initialDb);
+const CrudApi = () => {
+  const [db, setDb] = useState([]);
 
   // Variable de estado
   const [dataToEdit, setDataToEdit] = useState(null);
@@ -84,4 +56,4 @@ const CrudApp = () => {
   );
 };
 
-export default CrudApp;
+export default CrudApi;
