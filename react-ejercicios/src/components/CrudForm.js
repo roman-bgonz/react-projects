@@ -8,6 +8,18 @@ const initialForm = {
 const CrudForm = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
   const [form, setForm] = useState(initialForm);
 
+  /**
+   * Se va a ejecutar cuando dataToEdit tenga algo, si lo tiene entonces los
+   * campos se llenan con los valores, si no entonces se resetea
+   */
+  useEffect(() => {
+    if (dataToEdit) {
+      setForm(dataToEdit);
+    } else {
+      setForm(initialForm);
+    }
+  }, [dataToEdit]);
+
   const handleChange = (e) => {
     setForm({
       ...form,
@@ -39,7 +51,7 @@ const CrudForm = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
 
   return (
     <div>
-      <h3>Agregar</h3>
+      <h3>{dataToEdit ? 'Editar' : 'Agregar'}</h3>
       <form onSubmit={handleSubmit}>
         <input
           type="text"

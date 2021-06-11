@@ -42,7 +42,14 @@ const CrudApp = () => {
     setDb([...db, data]);
   };
 
-  const updateData = (data) => {};
+  const updateData = (data) => {
+    /**
+     * Si el id del arreglo es el mismo de la data que se recibe, entonces data
+     * reemplazará el objeto en esa posición, de lo contrario se que el objeto como es
+     */
+    let newData = db.map((el) => (el.id === data.id ? data : el));
+    setDb(newData);
+  };
 
   const deleteData = (id) => {};
 
