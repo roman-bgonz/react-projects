@@ -1,5 +1,5 @@
 import React from 'react';
-import CrudApp from './components/CrudApp';
+import CrudApp from './components/local/CrudApp';
 // Curso https://www.youtube.com/watch?v=b-PcWvzf9Xs&list=PLvq-jIkSeTUZ5XcUw8fJPTBKEHEKPMTKk&index=28
 function App() {
   return (
