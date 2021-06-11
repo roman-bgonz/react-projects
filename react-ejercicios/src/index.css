@@ -48,7 +48,14 @@ form {
 }
 
 hr {
-  margin: 2rem auto;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  outline: 0;
+  border: 0;
+  text-align: center;
+  background-color: #2b8fad;
+  height: 3rem;
+  width: 100%;
 }
 
 table {
