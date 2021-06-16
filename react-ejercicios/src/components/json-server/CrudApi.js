@@ -1,4 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { helpHttp } from '../../helpers/helpHttp';
+import Loader from '../Loader';
+import Message from '../Message';
 import CrudForm from '../shared/CrudForm';
 import CrudTable from '../shared/CrudTable';
 
@@ -7,6 +10,24 @@ const CrudApi = () => {
 
   // Variable de estado
   const [dataToEdit, setDataToEdit] = useState(null);
+
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
+
+  let api = helpHttp();
+  let url = 'http://localhost:5000/santos';
+
+  // ComponentDidMount
+  useEffect(() => {
+    api.get(url).then((res) => {
+      //console.log(res);
+      if (!res.err) {
+        setDb(res);
+      } else {
+        setDb(null);
+      }
+    });
+  }, []);
 
   const createData = (data) => {
     data.id = Date.now();
@@ -46,6 +67,8 @@ const CrudApi = () => {
           dataToEdit={dataToEdit}
           setDataToEdit={setDataToEdit}
         />
+        {loading && <Loader />}
+        {error && <Message />}
         <CrudTable
           data={db}
           setDataToEdit={setDataToEdit}
