@@ -6,7 +6,7 @@ import CrudForm from '../shared/CrudForm';
 import CrudTable from '../shared/CrudTable';
 
 const CrudApi = () => {
-  const [db, setDb] = useState([]);
+  const [db, setDb] = useState(null);
 
   // Variable de estado
   const [dataToEdit, setDataToEdit] = useState(null);
@@ -19,20 +19,41 @@ const CrudApi = () => {
 
   // ComponentDidMount
   useEffect(() => {
-    api.get(url).then((res) => {
-      //console.log(res);
-      if (!res.err) {
-        setDb(res);
-      } else {
-        setDb(null);
-      }
-    });
-  }, []);
+    setLoading(true);
+    helpHttp()
+      .get(url)
+      .then((res) => {
+        //console.log(res);
+        if (!res.err) {
+          setDb(res);
+          setError();
+        } else {
+          setDb(null);
+          setError(res);
+        }
+        setLoading(false);
+      });
+  }, [url]);
 
   const createData = (data) => {
     data.id = Date.now();
-    //Se combina lo que ya está en el arreglo con lo nuevo
-    setDb([...db, data]);
+
+    let options = {
+      body: data,
+      headers: { 'content-type': 'application/json' },
+    };
+
+    api.post(url, options).then((res) => {
+      console.log(res);
+      if (!res.err) {
+        //Se combina lo que ya está en el arreglo con lo nuevo
+        setDb([...db, res]);
+        setError();
+      } else {
+        setDb(null);
+        setError(res);
+      }
+    });
   };
 
   const updateData = (data) => {
@@ -68,12 +89,19 @@ const CrudApi = () => {
           setDataToEdit={setDataToEdit}
         />
         {loading && <Loader />}
-        {error && <Message />}
-        <CrudTable
-          data={db}
-          setDataToEdit={setDataToEdit}
-          deleteData={deleteData}
-        />
+        {error && (
+          <Message
+            msg={`Error ${error.status}: ${error.statusText}`}
+            bgColor="#dc3545"
+          />
+        )}
+        {db && (
+          <CrudTable
+            data={db}
+            setDataToEdit={setDataToEdit}
+            deleteData={deleteData}
+          />
+        )}
       </article>
     </div>
   );
