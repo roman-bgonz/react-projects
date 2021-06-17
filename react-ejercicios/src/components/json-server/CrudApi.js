@@ -57,12 +57,28 @@ const CrudApi = () => {
   };
 
   const updateData = (data) => {
-    /**
-     * Si el id del arreglo es el mismo de la data que se recibe, entonces data
-     * reemplazará el objeto en esa posición, de lo contrario se que el objeto como es
-     */
-    let newData = db.map((el) => (el.id === data.id ? data : el));
-    setDb(newData);
+    let endpoint = `${url}/${data.id}`;
+
+    let options = {
+      body: data,
+      headers: { 'content-type': 'application/json' },
+    };
+
+    api.put(endpoint, options).then((res) => {
+      console.log(res);
+      if (!res.err) {
+        /**
+         * Si el id del arreglo es el mismo de la data que se recibe, entonces data
+         * reemplazará el objeto en esa posición, de lo contrario se que el objeto como es
+         */
+        let newData = db.map((el) => (el.id === data.id ? data : el));
+        setDb(newData);
+        setError();
+      } else {
+        setDb(null);
+        setError(res);
+      }
+    });
   };
 
   const deleteData = (id) => {
@@ -71,8 +87,22 @@ const CrudApi = () => {
     );
 
     if (isDelete) {
-      let newData = db.filter((el) => el.id !== id);
-      setDb(newData);
+      let endpoint = `${url}/${id}`;
+      let options = {
+        headers: { 'content-type': 'application/json' },
+      };
+
+      api.del(endpoint, options).then((res) => {
+        console.log(res);
+        if (!res.err) {
+          let newData = db.filter((el) => el.id !== id);
+          setDb(newData);
+          setError();
+        } else {
+          setDb(null);
+          setError(res);
+        }
+      });
     } else {
       return;
     }
