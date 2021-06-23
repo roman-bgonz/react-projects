@@ -11,6 +11,7 @@ const SongSearch = () => {
 
   const handleSearch = (data) => {
     console.log(data);
+    setSearch(data);
   };
 
   return (
