@@ -40,10 +40,15 @@ const SongSearch = () => {
 
   return (
     <div>
-      Song
-      {loading && <Loader />}
-      <SongForm handleSearch={handleSearch} />
-      <SongDetails search={search} lyric={lyric} bio={bio} />
+      <h2>Son search</h2>
+      <article className="grid-1-3">
+        <SongForm handleSearch={handleSearch} />
+        {loading && <Loader />}
+        {/** Cuando search tenga algo y loading sea falso */}
+        {search && !loading && (
+          <SongDetails search={search} lyric={lyric} bio={bio} />
+        )}
+      </article>
     </div>
   );
 };
