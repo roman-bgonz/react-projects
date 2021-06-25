@@ -1,5 +1,7 @@
 import React from 'react';
 import { useForm } from '../hooks/useForm';
+import Loader from '../Loader';
+import Message from '../Message';
 
 const initialForm = {
   name: '',
@@ -102,6 +104,13 @@ const ContactForm = () => {
 
         <input type="submit" value="Enviar" />
       </form>
+      {loading && <Loader />}
+      {response && (
+        <Message
+          msg="El correo se ha enviado correctamente"
+          bgColor="#198754"
+        />
+      )}
     </div>
   );
 };
