@@ -1,5 +1,6 @@
 import React from 'react';
 import SongSearch from './components/buscador-canciones/SongSearch';
+import ContactForm from './components/formulario/ContactForm';
 import CrudApi from './components/json-server/CrudApi';
 import CrudApp from './components/local/CrudApp';
 import SelectsAnidados from './components/selects-anidados/SelectsAnidados';
@@ -8,6 +9,8 @@ function App() {
   return (
     <>
       <h1>Ejercicios con React</h1>
+      <ContactForm />
+      <hr />
       <SelectsAnidados />
       <hr />
       <SongSearch />
