@@ -1,9 +1,23 @@
 import React from 'react';
 import { useForm } from '../hooks/useForm';
 
-const initialForm = {};
+const initialForm = {
+  name: '',
+  email: '',
+  subject: '',
+  comments: '',
+};
 
-const validationsForm = (form) => {};
+const validationsForm = (form) => {
+  let errors = {};
+
+  if (!form.name.trim()) {
+    errors.name = "El campo 'Nombre' es requerido";
+  }
+
+  return errors;
+};
+
 const ContactForm = () => {
   const {
     form,
@@ -27,6 +41,8 @@ const ContactForm = () => {
           value={form.name}
           required
         />
+        {errors.name && <p className="error-p">{errors.name}</p>}
+
         <input
           type="email"
           name="email"
@@ -36,6 +52,8 @@ const ContactForm = () => {
           value={form.email}
           required
         />
+        {errors.email && <p className="error-p">{errors.email}</p>}
+
         {/* El nombre en el atributo name debe coincidir con el nombre en el objecto form */}
         <input
           type="text"
@@ -46,6 +64,7 @@ const ContactForm = () => {
           value={form.subject}
           required
         />
+        {errors.subject && <p className="error-p">{errors.subject}</p>}
 
         <textarea
           name="comments"
@@ -57,6 +76,8 @@ const ContactForm = () => {
           value={form.comments}
           required
         ></textarea>
+        {errors.comments && <p className="error-p">{errors.comments}</p>}
+
         <input type="submit" value="Enviar" />
       </form>
     </div>
