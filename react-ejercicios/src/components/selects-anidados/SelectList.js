@@ -10,7 +10,7 @@ const SelectList = ({ title, url, handleChange }) => {
   if (!data) return null;
 
   if (error || data.error) {
-    console.log(error);
+    //console.log(error);
     return (
       <Message
         msg={`${error != null ? error.status : data.code_error}: ${
