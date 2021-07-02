@@ -3,6 +3,7 @@ import Acerca from '../pages/Acerca';
 import Contacto from '../pages/Contacto';
 import Error404 from '../pages/Error404';
 import Home from '../pages/Home';
+import Productos from '../pages/Productos';
 import Usuario from '../pages/Usuario';
 import MenuConceptos from './MenuConceptos';
 function ConceptosBasicos() {
@@ -20,6 +21,7 @@ function ConceptosBasicos() {
           <Route exact path="/acerca" children={<Acerca />} />
           <Route exact path="/contacto" component={Contacto} />
           <Route exact path="/usuario/:username" component={Usuario} />
+          <Route exact path="/productos" component={Productos} />
           <Route path="*" component={Error404} />
         </Switch>
       </Router>

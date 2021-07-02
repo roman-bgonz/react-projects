@@ -6,19 +6,19 @@ const MenuConceptos = () => {
     <nav>
       <ol>
         <li>
-          <span>Enlace HTML (no recomendado)</span>
+          <span>Enlace HTML (no recomendado) </span>
           <a href="/">Home</a>
           <a href="/acerca">Acerca</a>
           <a href="/contacto">Contacto</a>
         </li>
         <li>
-          <span>Links</span>
+          <span>Links </span>
           <Link to="/">Home</Link>
           <Link to="/acerca">Acerca</Link>
           <Link to="/contacto">Contacto</Link>
         </li>
         <li>
-          <span>Navlink</span>
+          <span>Navlink </span>
           <NavLink exact to="/" activeClassName="active">
             Home
           </NavLink>
@@ -30,9 +30,13 @@ const MenuConceptos = () => {
           </NavLink>
         </li>
         <li>
-          <span>Parámetros</span>
+          <span>Parámetros </span>
           <Link to="/usuario/roman">Roman</Link>
           <Link to="/usuario/prueba">Prueba</Link>
+        </li>
+        <li>
+          <span>Parámetros de consulta </span>
+          <Link to="/productos">Productos</Link>
         </li>
       </ol>
     </nav>
