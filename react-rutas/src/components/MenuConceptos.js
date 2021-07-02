@@ -29,6 +29,11 @@ const MenuConceptos = () => {
             Contacto
           </NavLink>
         </li>
+        <li>
+          <span>Parámetros</span>
+          <Link to="/usuario/roman">Roman</Link>
+          <Link to="/usuario/prueba">Prueba</Link>
+        </li>
       </ol>
     </nav>
   );
