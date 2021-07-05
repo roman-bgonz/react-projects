@@ -12,7 +12,7 @@ import { Redirect, Route } from 'react-router';
 };*/
 
 //Simular autenticación
-let authenticated = false;
+let authenticated = true;
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
   return (

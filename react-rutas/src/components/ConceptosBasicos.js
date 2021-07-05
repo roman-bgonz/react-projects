@@ -3,6 +3,8 @@ import {
   Switch,
   Route,
   Redirect,
+  HashRouter,
+  Link,
 } from 'react-router-dom';
 import Acerca from '../pages/Acerca';
 import Contacto from '../pages/Contacto';
@@ -18,6 +20,20 @@ import PrivateRoute from './PrivateRoute';
 function ConceptosBasicos() {
   return (
     <div>
+      <h2>Hash Router</h2>
+      <HashRouter>
+        <nav>
+          <Link to="/">Home</Link>
+          <Link to="/acerca">Acerca</Link>
+          <Link to="/contacto">Contacto</Link>
+        </nav>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/acerca" children={<Acerca />} />
+          <Route exact path="/contacto" component={Contacto} />
+        </Switch>
+      </HashRouter>
+      <hr />
       <h2>Conceptos basicos</h2>
       {/** Si no se le agrega la propiedad EXACT, las rutas deben ser escritas de lo más particular a lo más general,
        * ya que si ponemos / hasta arriba, entonces es la que siempre va a estar cargando,
