@@ -125,34 +125,43 @@ const CrudApi = () => {
           </nav>
         </header>
         <Switch>
-          <Route exact path="/"></Route>
-          <Route exact path="/agregar"></Route>
-          <Route exact path="/editar/:id"></Route>
+          <Route exact path="/">
+            <article className="grid-1-2">
+              {loading && <Loader />}
+              {error && (
+                <Message
+                  msg={`Error ${error.status}: ${error.statusText}`}
+                  bgColor="#dc3545"
+                />
+              )}
+              {db && (
+                <CrudTable
+                  data={db}
+                  setDataToEdit={setDataToEdit}
+                  deleteData={deleteData}
+                />
+              )}
+            </article>
+          </Route>
+          <Route exact path="/agregar">
+            <CrudForm
+              createData={createData}
+              updateData={updateData}
+              dataToEdit={dataToEdit}
+              setDataToEdit={setDataToEdit}
+            />
+          </Route>
+          <Route exact path="/editar/:id">
+            <CrudForm
+              createData={createData}
+              updateData={updateData}
+              dataToEdit={dataToEdit}
+              setDataToEdit={setDataToEdit}
+            />
+          </Route>
           <Route path="*" children={Error404} />
         </Switch>
       </HashRouter>
-      <article className="grid-1-2">
-        <CrudForm
-          createData={createData}
-          updateData={updateData}
-          dataToEdit={dataToEdit}
-          setDataToEdit={setDataToEdit}
-        />
-        {loading && <Loader />}
-        {error && (
-          <Message
-            msg={`Error ${error.status}: ${error.statusText}`}
-            bgColor="#dc3545"
-          />
-        )}
-        {db && (
-          <CrudTable
-            data={db}
-            setDataToEdit={setDataToEdit}
-            deleteData={deleteData}
-          />
-        )}
-      </article>
     </div>
   );
 };
