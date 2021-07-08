@@ -5,8 +5,9 @@ const initialForm = {
   song: '',
 };
 
-const SongForm = ({ handleSearch }) => {
+const SongForm = ({ handleSearch, handleSaveSong }) => {
   const [form, setForm] = useState(initialForm);
+  const [isDisabled, setIsDisabled] = useState(true);
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -16,12 +17,14 @@ const SongForm = ({ handleSearch }) => {
     e.preventDefault();
 
     if (!form.artist || !form.song) {
+      setIsDisabled(true);
       alert('Datos incompletos');
       return;
     }
 
     handleSearch(form);
     setForm(initialForm);
+    setIsDisabled(false);
   };
 
   return (
@@ -42,6 +45,12 @@ const SongForm = ({ handleSearch }) => {
           value={form.song}
         />
         <input type="submit" value="Enviar" />
+        <input
+          type="button"
+          onClick={handleSaveSong}
+          value="Agregar canción"
+          disabled={isDisabled && 'disabled'}
+        />
       </form>
     </div>
   );

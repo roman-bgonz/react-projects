@@ -7,11 +7,11 @@ function App() {
   return (
     <div>
       <h1>React router</h1>
-      {/* <SongSearch /> */}
+      {<SongSearch />}
       <hr />
-      <CrudApi />
+      {<CrudApi />}
       <hr />
-      {/* <ConceptosBasicos /> */}
+      {<ConceptosBasicos />}
     </div>
   );
 }
