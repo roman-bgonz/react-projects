@@ -5,6 +5,7 @@ import Error404 from '../../pages/Error404';
 import Loader from '../shared/Loader';
 import SongDetails from './SongDetails';
 import SongForm from './SongForm';
+import SongTable from '../../pages/SongTable';
 
 let mySongsInit = JSON.parse(localStorage.getItem('mySongs')) || [];
 const SongSearch = () => {
@@ -57,14 +58,17 @@ const SongSearch = () => {
           <Link to="/">Home</Link>
         </header>
         {loading && <Loader />}
-        <article className="grid-1-3">
+        <article className="grid-1-2">
           <Switch>
             <Route exact path="/">
               <SongForm
                 handleSearch={handleSearch}
                 handleSaveSong={handleSaveSong}
               />
-              <h2>Tabla de canciones</h2>
+              <SongTable
+                mySongs={mySongs}
+                handleDeleteSong={handleDeleteSong}
+              />
               {/** Cuando search tenga algo y loading sea falso */}
               {search && !loading && (
                 <SongDetails search={search} lyric={lyric} bio={bio} />
