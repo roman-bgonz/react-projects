@@ -25,7 +25,7 @@ const SongTable = ({ mySongs, handleDeleteSong }) => {
             ))
           ) : (
             <tr>
-              <td colSpan="2">Sin canciones</td>
+              <td colSpan="4">Sin canciones</td>
             </tr>
           )}
         </tbody>
