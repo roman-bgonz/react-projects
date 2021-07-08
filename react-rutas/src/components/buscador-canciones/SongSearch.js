@@ -48,8 +48,10 @@ const SongSearch = () => {
 
   const handleSaveSong = () => {
     let currentSong = { search, lyric, bio };
-    setMySongs((mySongs) => [...mySongs, currentSong]);
+    let songs = [...mySongs, currentSong];
+    setMySongs(songs);
     setSearch(null);
+    localStorage.setItem('mySongs', JSON.stringify(songs));
   };
   const handleDeleteSong = (id) => {
     let isDelete = window.confirm(
