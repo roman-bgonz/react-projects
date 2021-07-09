@@ -10,7 +10,6 @@ function App() {
       otros componentes que no se modificaron, que esos permanezcan en caché */}
       <h1>Memorización en React</h1>
       <hr />
-      <h2>Teoria</h2>
       <Contador />
     </div>
   );
