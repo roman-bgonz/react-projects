@@ -1,23 +1,28 @@
-import logo from './logo.svg';
 import './App.css';
+import Contador from './components/Contador';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{ textAlign: 'center' }}>
+      <h1>
+        <ul>
+          - Reducer es muy parecido a Redux pero esta ya viene incluida en el
+          proyecto = Reducer:
+          <li>Función reductora</li>
+          <li>
+            Devuelve un valor y todo la lógica de la función es capaz de
+            resolver un solo procesamiento sin afectar elementos externos
+          </li>
+          <li>
+            Siempre retornan un valor que se considera el estdo de la aplicación
+          </li>
+          <li>No podemos usar useEffect dentro de funciones reductoras</li>
+          <li>No podemos realizar peticiones adíncronas.</li>
+          <li>Usarlo cuando la app ya tiene una mediana complejidad</li>
+        </ul>
+        <hr />
+        <Contador />
+      </h1>
     </div>
   );
 }
