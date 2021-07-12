@@ -6,9 +6,9 @@ function App() {
   return (
     <div>
       <h1>React Context API</h1>
-      <MyPage />
-      <hr />
       <MyPageContext />
+      <hr />
+      <MyPage />
     </div>
   );
 }

@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
+import { ThemeProvider } from '../../context/ThemeContext';
 import FooterContext from './FooterContext';
 import HeaderContext from './HeaderContext';
 import MainContext from './MainContext';
 
-const initialTheme = 'light';
 const initialLanguage = 'es';
 const initialAuth = null;
 const translations = {
   es: {
-    headerTitle: 'Mi aplicación SIN Context API',
+    headerTitle: 'Mi aplicación CON Context API',
     headerSubtitle: 'Mi cabecera',
     headerLight: 'Claro',
     headerDark: 'Oscuro',
@@ -20,7 +20,7 @@ const translations = {
     footerTitle: 'Mi pié de página',
   },
   en: {
-    headerTitle: 'My application without Context API',
+    headerTitle: 'My application with Context API',
     headerSubtitle: 'My header',
     headerLight: 'Light',
     headerDark: 'Dark',
@@ -34,18 +34,9 @@ const translations = {
 };
 
 const MyPageContext = () => {
-  const [theme, setTheme] = useState(initialTheme);
   const [language, setLanguage] = useState(initialLanguage);
   const [texts, setTexts] = useState(translations[language]);
   const [auth, setAuth] = useState(initialAuth);
-
-  const handleTheme = (e) => {
-    if (e.target.value === 'light') {
-      setTheme('light');
-    } else {
-      setTheme('dark');
-    }
-  };
 
   const handleLanguage = (e) => {
     if (e.target.value === 'es') {
@@ -67,17 +58,16 @@ const MyPageContext = () => {
 
   return (
     <div className="my-page">
-      <HeaderContext
-        theme={theme}
-        handleTheme={handleTheme}
-        handleLanguage={handleLanguage}
-        andle
-        texts={texts}
-        auth={auth}
-        handleAuth={handleAuth}
-      />
-      <MainContext theme={theme} texts={texts} auth={auth} />
-      <FooterContext theme={theme} texts={texts} />
+      <ThemeProvider>
+        <HeaderContext
+          handleLanguage={handleLanguage}
+          texts={texts}
+          auth={auth}
+          handleAuth={handleAuth}
+        />
+        <MainContext texts={texts} auth={auth} />
+        <FooterContext texts={texts} />
+      </ThemeProvider>
     </div>
   );
 };

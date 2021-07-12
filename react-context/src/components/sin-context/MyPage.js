@@ -71,7 +71,6 @@ const MyPage = () => {
         theme={theme}
         handleTheme={handleTheme}
         handleLanguage={handleLanguage}
-        andle
         texts={texts}
         auth={auth}
         handleAuth={handleAuth}
