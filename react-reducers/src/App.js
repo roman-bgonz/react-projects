@@ -1,5 +1,6 @@
 import './App.css';
 import Contador from './components/Contador';
+import ContadorMejorado from './components/ContadorMejorado';
 
 function App() {
   return (
@@ -20,6 +21,8 @@ function App() {
           <li>No podemos realizar peticiones adíncronas.</li>
           <li>Usarlo cuando la app ya tiene una mediana complejidad</li>
         </ul>
+        <hr />
+        <ContadorMejorado />
         <hr />
         <Contador />
       </h1>
