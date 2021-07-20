@@ -38,7 +38,23 @@ export function shoppingReducer(state, action) {
       let newItem = state.products.find(
         (product) => product.id === action.payload
       );
-      return { ...state, cart: [...state.cart, newItem] };
+
+      // Si un elemento del carrito de compras coincide con lo que nos mandó el usuario entonces se almacena
+      let itemInCart = state.cart.find((item) => item.id === newItem.id);
+
+      // Si el item en el carrito ya existe o y no es nula
+      return itemInCart
+        ? // El elemento en el carrito en su propiedad quantity se le suma 1
+          {
+            ...state,
+            cart: state.cart.map((item) =>
+              item.id === newItem.id
+                ? { ...item, quantity: item.quantity + 1 }
+                : item
+            ),
+          }
+        : // De lo contrario se duplica el estado como se tenia, y en la propiedad cart como nuevo elemento se agrega el item y quantity en 1
+          { ...state, cart: [...state.cart, { ...newItem, quantity: 1 }] };
     }
     case TYPES.REMOVE_ONE_FROM_CART:
       {
