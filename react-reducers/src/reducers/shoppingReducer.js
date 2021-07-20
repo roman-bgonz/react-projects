@@ -56,18 +56,34 @@ export function shoppingReducer(state, action) {
         : // De lo contrario se duplica el estado como se tenia, y en la propiedad cart como nuevo elemento se agrega el item y quantity en 1
           { ...state, cart: [...state.cart, { ...newItem, quantity: 1 }] };
     }
-    case TYPES.REMOVE_ONE_FROM_CART:
-      {
-      }
-      break;
+    case TYPES.REMOVE_ONE_FROM_CART: {
+      let itemToDelete = state.cart.find((item) => item.id === action.payload);
+
+      return itemToDelete.quantity > 1
+        ? {
+            ...state,
+            cart: state.cart.map((item) =>
+              item.id === action.payload
+                ? { ...item, quantity: item.quantity - 1 }
+                : item
+            ),
+          }
+        : {
+            ...state,
+            cart: state.cart.filter((item) => item.id !== action.payload),
+          };
+    }
     case TYPES.REMOVE_ALL_FROM_CART:
+      // eslint-disable-next-line no-lone-blocks
       {
+        return {
+          ...state,
+          cart: state.cart.filter((item) => item.id !== action.payload),
+        };
       }
       break;
     case TYPES.CLEAR_CART:
-      {
-      }
-      break;
+      return shoppingInitialState;
     default:
       return state;
   }
