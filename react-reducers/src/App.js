@@ -2,6 +2,7 @@ import './App.css';
 import Contador from './components/Contador';
 import ContadorMejorado from './components/ContadorMejorado';
 import ShoppingCart from './components/ShoppingCart';
+import CrudApi from './crud-api/CrudApi';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <li>No podemos realizar peticiones adíncronas.</li>
         <li>Usarlo cuando la app ya tiene una mediana complejidad</li>
       </ul>
+      <CrudApi />
       <hr />
       <ShoppingCart />
       <hr />
